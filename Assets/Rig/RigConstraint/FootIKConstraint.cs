@@ -33,7 +33,7 @@ public struct FootIKConstraintJob : IWeightedAnimationJob {
             var pos = FootControllerBase.GetPosition (stream);
             var rot = FootControllerBase.GetRotation (stream);
 
-            if (cursorPos.x >= 0f) {
+            if (cursorPos.x < 0f) {
                 var footRightSidePos = FootRightSide.GetPosition (stream);
                 var axisZ = rot * Vector3.forward;
                 var rotZ = Quaternion.AngleAxis (180 * cursorPos.x, axisZ);
